@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/studentBottomNavFindTeacherFragment"
+        android:icon="@drawable/item_find_teacher"
+        android:title="@string/find_teacher" />
+
+    <item
+        android:id="@+id/studentBottomNavLessonsFragment"
+        android:icon="@drawable/item_lessons"
+        android:title="@string/lessons" />
+
+    <item
+        android:id="@+id/studentBottomNavMessagesFragment"
+        android:icon="@drawable/item_messages"
+        android:title="@string/messages" />
+
+    <item
+        android:id="@+id/studentBottomNavNotificationsFragment"
+        android:icon="@drawable/item_notifications"
+        android:title="@string/notifications" />
+
+</menu>
