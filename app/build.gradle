@@ -56,6 +56,10 @@ dependencies {
     def lifecycle_version = "2.4.0-alpha03"
     def room_version = "2.3.0"
     def retrofit_version = "2.9.0"
+    def rxandroid_version = "2.1.1"
+    def rxkotlin_version = "2.4.0"
+    def rxcalladapter_version = '2.9.0'
+    def moshi_version = "2.3.0"
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version")
@@ -92,4 +96,26 @@ dependencies {
     kapt("com.google.dagger:dagger-compiler:$dagger_version")
     implementation("com.google.dagger:hilt-android:$dagger_version")
     kapt("com.google.dagger:hilt-android-compiler:$dagger_version")
+
+    // OkHttpProfiler
+    implementation("com.localebro:okhttpprofiler:1.0.8")
+
+    // RxAndroid
+    implementation("io.reactivex.rxjava2:rxandroid:$rxandroid_version")
+
+    // RxKotlin
+    implementation("io.reactivex.rxjava2:rxkotlin:$rxkotlin_version")
+
+    // Rx-Retrofit Call Adapter
+    implementation("com.squareup.retrofit2:adapter-rxjava2:$rxcalladapter_version")
+
+    // Moshi
+    implementation("com.squareup.retrofit2:converter-moshi:$moshi_version")
+
+    // Timber logging
+    implementation("com.jakewharton.timber:timber:5.0.1")
+
+    // DataStore
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
 }

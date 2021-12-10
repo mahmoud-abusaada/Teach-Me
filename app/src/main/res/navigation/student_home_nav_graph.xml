@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_nav_graph"
+    app:startDestination="@id/studentBottomNavFindTeacherFragment">
+    <fragment
+        android:id="@+id/studentBottomNavFindTeacherFragment"
+        android:name="com.abusada.teachme.presentation.student.home.find_teacher.FindTeacherFragment"
+        android:label="FindTeacherFragment" >
+        <action
+            android:id="@+id/action_findTeacherFragment_to_lessonsFragment"
+            app:destination="@id/studentBottomNavLessonsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentBottomNavLessonsFragment"
+        android:name="com.abusada.teachme.presentation.student.home.lessons.LessonsFragment"
+        android:label="LessonsFragment" >
+        <action
+            android:id="@+id/action_lessonsFragment_to_messagesFragment"
+            app:destination="@id/studentBottomNavMessagesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentBottomNavMessagesFragment"
+        android:name="com.abusada.teachme.presentation.student.home.messages.MessagesFragment"
+        android:label="MessagesFragment" >
+        <action
+            android:id="@+id/action_messagesFragment_to_notificationsFragment"
+            app:destination="@id/studentBottomNavNotificationsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentBottomNavNotificationsFragment"
+        android:name="com.abusada.teachme.presentation.student.home.notifications.NotificationsFragment"
+        android:label="NotificationsFragment" />
+</navigation>

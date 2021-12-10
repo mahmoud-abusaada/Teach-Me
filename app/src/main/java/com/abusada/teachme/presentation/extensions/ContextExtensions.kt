@@ -1,4 +1,4 @@
-package com.abusada.teachme.presentation.common.extensions
+package com.abusada.teachme.domain.extensions
 
 import android.content.Context
 import android.net.ConnectivityManager

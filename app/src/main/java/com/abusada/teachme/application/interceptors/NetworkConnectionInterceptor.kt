@@ -1,7 +1,7 @@
 package com.abusada.teachme.application.interceptors
 
 import android.content.Context
-import com.abusada.teachme.presentation.common.extensions.isNetworkAvailable
+import com.abusada.teachme.domain.extensions.isNetworkAvailable
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.io.IOException

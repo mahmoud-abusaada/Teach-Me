@@ -17,6 +17,9 @@
             app:exitAnim="@anim/card_flip_right_out"
             app:popEnterAnim="@anim/card_flip_left_in"
             app:popExitAnim="@anim/card_flip_left_out" />
+        <action
+            android:id="@+id/action_loginFragment_to_studentActivity2"
+            app:destination="@id/studentActivity2" />
     </fragment>
     <fragment
         android:id="@+id/accountTypeFragment"
@@ -76,4 +79,8 @@
             app:popEnterAnim="@anim/card_flip_left_in"
             app:popExitAnim="@anim/card_flip_left_out" />
     </fragment>
+    <activity
+        android:id="@+id/studentActivity2"
+        android:name="com.abusada.teachme.presentation.student.StudentActivity"
+        android:label="StudentActivity" />
 </navigation>

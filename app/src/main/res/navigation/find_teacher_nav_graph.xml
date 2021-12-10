@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/find_teacher_nav_graph"
+    app:startDestination="@id/findTeacherCoursesFragment">
+
+    <fragment
+        android:id="@+id/findTeacherCoursesFragment"
+        android:name="com.abusada.teachme.presentation.student.home.find_teacher.courses.view.FindTeacherCoursesFragment"
+        android:label="FindTeacherCoursesFragment" >
+        <action
+            android:id="@+id/action_findTeacherCoursesFragment_to_findTeacherGradesFragment"
+            app:destination="@id/findTeacherGradesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/findTeacherGradesFragment"
+        android:name="com.abusada.teachme.presentation.student.home.find_teacher.grades.FindTeacherGradesFragment"
+        android:label="FindTeacherGradesFragment" >
+        <action
+            android:id="@+id/action_findTeacherGradesFragment_to_findTeacherTeachersFragment"
+            app:destination="@id/findTeacherTeachersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/findTeacherTeachersFragment"
+        android:name="com.abusada.teachme.presentation.student.home.find_teacher.teachers.FindTeacherTeachersFragment"
+        android:label="FindTeacherTeachersFragment" />
+</navigation>
