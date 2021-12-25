@@ -1,4 +1,4 @@
-package com.abusada.teachme.presentation.extensions
+package com.abusada.teachme.presentation.common.extensions
 
 import android.os.Looper
 import android.view.View

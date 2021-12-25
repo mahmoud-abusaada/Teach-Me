@@ -1,5 +1,6 @@
 package com.abusada.teachme.application.di_modules
 
+import com.abusada.teachme.data.api.FindTeacherApiEndPoint
 import com.abusada.teachme.data.api.LoginApiEndPoint
 import dagger.Module
 import dagger.Provides
@@ -16,5 +17,10 @@ class EndPointModule {
     @Provides
     fun provideLoginApiEndPoint(retrofit: Retrofit): LoginApiEndPoint =
         retrofit.create(LoginApiEndPoint::class.java)
+
+    @Singleton
+    @Provides
+    fun provideFindTeacherApiEndPoint(retrofit: Retrofit): FindTeacherApiEndPoint =
+        retrofit.create(FindTeacherApiEndPoint::class.java)
 
 }

@@ -2,23 +2,18 @@ package com.abusada.teachme.presentation.start.login
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.abusada.teachme.R
-import com.abusada.teachme.data.models.Student
 import com.abusada.teachme.databinding.FragmentLoginBinding
 import com.abusada.teachme.domain.common.Resource
 import com.abusada.teachme.domain.usecase.LoginUseCase
 import com.abusada.teachme.presentation.BaseFragment
 import com.abusada.teachme.presentation.common.viewBinding
-import com.abusada.teachme.presentation.extensions.clicks
+import com.abusada.teachme.presentation.common.extensions.clicks
 import com.abusada.teachme.presentation.start.StartViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope

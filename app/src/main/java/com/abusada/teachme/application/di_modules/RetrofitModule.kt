@@ -23,7 +23,7 @@ class RetrofitModule {
 
     @Singleton
     @Provides
-    fun providesRetrofit(okoHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
+    fun provideRetrofit(okoHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         .baseUrl(AppConstants.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(FlowCallAdapterFactory.create())
