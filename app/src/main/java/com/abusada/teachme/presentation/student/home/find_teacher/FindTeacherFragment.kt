@@ -7,7 +7,9 @@ import com.abusada.teachme.R
 import com.abusada.teachme.databinding.FragmentFindTeacherBinding
 import com.abusada.teachme.presentation.BaseFragment
 import com.abusada.teachme.presentation.common.viewBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FindTeacherFragment : BaseFragment(R.layout.fragment_find_teacher) {
 
     private val viewModel: FindTeacherViewModel by viewModels()

@@ -6,36 +6,31 @@
     <data>
 
         <variable
-            name="viewModel"
-            type="com.abusada.teachme.presentation.student.home.find_teacher.FindTeacherViewModel" />
-
-        <variable
-            name="course"
-            type="com.abusada.teachme.data.models.Course" />
+            name="grade"
+            type="com.abusada.teachme.data.models.GradeDescription" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:coroutineClick="@{ () -> viewModel.onCourseClicked(course) }">
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            android:text="@{ course.name }"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:text="@{ grade.grade_english }"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Course" />
+            tools:text="Grade" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/divider"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -14,7 +14,7 @@
     </fragment>
     <fragment
         android:id="@+id/findTeacherGradesFragment"
-        android:name="com.abusada.teachme.presentation.student.home.find_teacher.grades.FindTeacherGradesFragment"
+        android:name="com.abusada.teachme.presentation.student.home.find_teacher.grades.view.FindTeacherGradesFragment"
         android:label="FindTeacherGradesFragment" >
         <action
             android:id="@+id/action_findTeacherGradesFragment_to_findTeacherTeachersFragment"

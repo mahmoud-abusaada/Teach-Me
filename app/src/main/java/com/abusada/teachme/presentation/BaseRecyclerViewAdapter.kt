@@ -10,4 +10,10 @@ abstract class BaseRecyclerViewAdapter<T> : RecyclerView.Adapter<RecyclerView.Vi
         return mItems.size
     }
 
+    interface RecyclerViewListener {
+
+        fun onItemClicked(position: Int)
+
+    }
+
 }

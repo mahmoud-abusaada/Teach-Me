@@ -7,8 +7,8 @@ import com.abusada.teachme.data.database.MyDatabase
 @Entity(tableName = MyDatabase.TABLES.GRADE_DESCRIPTION_TABLE)
 data class GradeDescription(
     @PrimaryKey
-    val grade_english: Int,
-    val grade_id: String
+    val grade_id: Int,
+    val grade_english: String
 ){
     constructor() : this(-1, "")
 }
