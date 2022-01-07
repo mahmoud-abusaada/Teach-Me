@@ -1,18 +1,16 @@
 package com.abusada.teachme.data.database.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Transaction
 import com.abusada.teachme.data.database.MyDatabase
 import com.abusada.teachme.data.models.CourseGrade
-import com.abusada.teachme.data.models.Course
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface CourseGradeDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertCourseGrade(courseGrade: CourseGrade)
+    @Transaction @Query("SELECT * FROM " + MyDatabase.TABLES.COURSE_TABLE)
+    fun getCourseGrades(): Flow<List<CourseGrade>>
 
 }

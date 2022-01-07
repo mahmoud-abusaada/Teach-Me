@@ -27,18 +27,19 @@ class RepositoryModule {
         courseDao: CourseDao,
         courseGradeDao: CourseGradeDao,
         favoriteTeacherDao: FavoriteTeacherDao,
-        gradeDescriptionDao: GradeDescriptionDao,
+        gradeDao: GradeDao,
         userInfoDao: UserInfoDao,
         myDataStore: MyDataStore
     ): LoginRepository =
-        LoginRepositoryImpl(loginApiEndPoint, appExecutors, courseDao, courseGradeDao, favoriteTeacherDao, gradeDescriptionDao, userInfoDao, myDataStore)
+        LoginRepositoryImpl(loginApiEndPoint, appExecutors, courseDao, courseGradeDao, favoriteTeacherDao, gradeDao, userInfoDao, myDataStore)
 
     @Singleton
     @Provides
     fun provideFindTeacherRepository(
         findTeacherApiEndPoint: FindTeacherApiEndPoint,
-        courseDao: CourseDao
+        courseDao: CourseDao,
+        gradeDao: GradeDao
     ): FindTeacherRepository =
-        FindTeacherRepositoryImpl(findTeacherApiEndPoint, courseDao)
+        FindTeacherRepositoryImpl(findTeacherApiEndPoint, courseDao, gradeDao)
 
 }

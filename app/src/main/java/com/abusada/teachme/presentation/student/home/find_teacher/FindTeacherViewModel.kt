@@ -4,7 +4,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.abusada.teachme.data.models.Course
-import com.abusada.teachme.data.models.GradeDescription
+import com.abusada.teachme.data.models.CourseGrade
+import com.abusada.teachme.data.models.Grade
 import com.abusada.teachme.domain.common.Resource
 import com.abusada.teachme.domain.usecase.find_teacher.GetCoursesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,43 +19,43 @@ class FindTeacherViewModel @Inject constructor(
     private val getCoursesUseCase: GetCoursesUseCase
 ) : ViewModel() {
 
-    val courses = MutableLiveData<Resource<List<Course>>>()
-    val grades = MutableLiveData<ArrayList<GradeDescription>>()
+    val coursesGrades = MutableLiveData<Resource<List<CourseGrade>>>()
+    val grades = MutableLiveData<ArrayList<Grade>>()
     val findTeacherActions = MutableLiveData<FindTeacherActions>()
+    var selectedCourse: CourseGrade = CourseGrade()
 
     fun initCourses() {
-//        val coursesList = ArrayList<Course>()
-//        coursesList.add(Course(1, "Maths"))
-//        coursesList.add(Course(2, "English"))
-//        coursesList.add(Course(3, "Arabic"))
-//        coursesList.add(Course(4, "Physics"))
-//        courses.postValue(coursesList)
         viewModelScope.launch(Dispatchers.IO) {
-            getCoursesUseCase.execute(false).collect {
-                courses.postValue(it)
+            getCoursesUseCase.execute(true).collect {
+                coursesGrades.postValue(it)
             }
         }
     }
 
     fun initGrades() {
-        val gradesList = ArrayList<GradeDescription>()
-        gradesList.add(GradeDescription(1, "1st Grade"))
-        gradesList.add(GradeDescription(2, "2nd Grade"))
-        gradesList.add(GradeDescription(3, "3rd Grade"))
-        gradesList.add(GradeDescription(4, "4th Grade"))
-        grades.postValue(gradesList)
+//        val gradesList = ArrayList<Grade>()
+//        gradesList.add(Grade(1, "1st Grade"))
+//        gradesList.add(Grade(2, "2nd Grade"))
+//        gradesList.add(Grade(3, "3rd Grade"))
+//        gradesList.add(Grade(4, "4th Grade"))
+        grades.postValue(selectedCourse.grades as ArrayList<Grade>?)
     }
 
     fun onFindTeacherAction(findTeacherActions: FindTeacherActions) {
         this.findTeacherActions.value = findTeacherActions
     }
 
-    fun onCourseClicked(course: Course){
-        findTeacherActions.value = FindTeacherActions.CourseClicked(course)
+    fun onCourseClicked(courseGrade: CourseGrade){
+        findTeacherActions.value = FindTeacherActions.CourseClicked(courseGrade)
     }
 
-    sealed class FindTeacherActions {
-        class CourseClicked(val course: Course) : FindTeacherActions()
+    fun onGradeClicked(grade: Grade){
+        findTeacherActions.value = FindTeacherActions.GradeClicked(grade)
+    }
+
+    sealed class FindTeacherActions() {
+        class CourseClicked(val courseGrade: CourseGrade) : FindTeacherActions()
+        class GradeClicked(val grade: Grade) : FindTeacherActions()
     }
 
     enum class FindTeacherActionsEnums {

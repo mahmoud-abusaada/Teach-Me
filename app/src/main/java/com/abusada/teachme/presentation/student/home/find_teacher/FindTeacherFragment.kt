@@ -2,6 +2,7 @@ package com.abusada.teachme.presentation.student.home.find_teacher
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.abusada.teachme.R
 import com.abusada.teachme.databinding.FragmentFindTeacherBinding
@@ -12,7 +13,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class FindTeacherFragment : BaseFragment(R.layout.fragment_find_teacher) {
 
-    private val viewModel: FindTeacherViewModel by viewModels()
+    private val viewModel: FindTeacherViewModel by activityViewModels()
 
     private val mBinding by viewBinding(FragmentFindTeacherBinding::bind)
 

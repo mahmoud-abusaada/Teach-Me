@@ -1,14 +1,14 @@
 package com.abusada.teachme.data.models
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.Relation
 import com.abusada.teachme.data.database.MyDatabase
 
-@Entity(tableName = MyDatabase.TABLES.COURSE_GRADE_TABLE)
 data class CourseGrade(
-    @PrimaryKey
-    val course_id: Int,
-    val grade_id: String
-){
-    constructor() : this(-1, "")
-}
+    @Embedded
+    val course: Course? = Course(),
+    @Relation(parentColumn = "id", entityColumn = "id")
+    val grades: List<Grade>? = ArrayList()
+)

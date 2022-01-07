@@ -5,7 +5,7 @@ object AppConstants {
     // Database
     const val APP_DATABASE_NAME = "teach_me"
 
-    const val BASE_URL = "http://192.168.10.10/"
+    const val BASE_URL = "http://192.168.10.10:80/"
 
     enum class AccountType(val value: Int) {
         STUDENT(0),

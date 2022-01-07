@@ -3,12 +3,13 @@ package com.abusada.teachme.presentation.student.home.find_teacher.grades.model
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.abusada.teachme.data.models.GradeDescription
+import com.abusada.teachme.data.models.Grade
 import com.abusada.teachme.databinding.RowFindTeacherGradeBinding
 import com.abusada.teachme.presentation.BaseRecyclerViewAdapter
+import com.abusada.teachme.presentation.student.home.find_teacher.FindTeacherViewModel
 
-class FindTeacherGradesAdapter(private val listener: RecyclerViewListener) :
-    BaseRecyclerViewAdapter<GradeDescription>() {
+class FindTeacherGradesAdapter(private val viewModel: FindTeacherViewModel) :
+    BaseRecyclerViewAdapter<Grade>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FindTeacherGradeViewHolder {
         return FindTeacherGradeViewHolder(
@@ -28,17 +29,8 @@ class FindTeacherGradesAdapter(private val listener: RecyclerViewListener) :
     inner class FindTeacherGradeViewHolder(val item: RowFindTeacherGradeBinding) :
         RecyclerView.ViewHolder(item.root) {
 
-//        init {
-//            CoroutineScope(Dispatchers.Main).launch {
-//                item.root.clicks().collect {
-//                    val position = adapterPosition
-//                    if (position != RecyclerView.NO_POSITION)
-//                        listener.onItemClicked(position)
-//                }
-//            }
-//        }
-
-        fun bind(grade: GradeDescription) {
+        fun bind(grade: Grade) {
+            item.viewModel = viewModel
             item.grade = grade
         }
     }

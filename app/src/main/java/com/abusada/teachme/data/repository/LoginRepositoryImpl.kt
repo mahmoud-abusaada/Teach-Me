@@ -20,7 +20,7 @@ class LoginRepositoryImpl(
     private val courseDao: CourseDao,
     private val courseGradeDao: CourseGradeDao,
     private val favoriteTeacherDao: FavoriteTeacherDao,
-    private val gradeDescriptionDao: GradeDescriptionDao,
+    private val gradeDao: GradeDao,
     private val userInfoDao: UserInfoDao,
     private val myDataStore: MyDataStore
 ) : LoginRepository {
