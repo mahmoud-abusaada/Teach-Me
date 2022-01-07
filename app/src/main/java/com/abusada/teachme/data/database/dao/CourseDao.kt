@@ -6,6 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.abusada.teachme.data.database.MyDatabase
 import com.abusada.teachme.data.models.Course
+import com.abusada.teachme.data.models.CourseGrade
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -18,6 +19,6 @@ interface CourseDao {
     fun insertCourses(courses: List<Course>)
 
     @Query("SELECT * FROM " + MyDatabase.TABLES.COURSE_TABLE)
-    fun getCourses(): Flow<List<Course>>
+    fun getCourseGrades(): Flow<List<CourseGrade>>
 
 }

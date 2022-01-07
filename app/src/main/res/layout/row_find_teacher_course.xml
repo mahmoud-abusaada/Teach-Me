@@ -10,21 +10,21 @@
             type="com.abusada.teachme.presentation.student.home.find_teacher.FindTeacherViewModel" />
 
         <variable
-            name="course"
-            type="com.abusada.teachme.data.models.Course" />
+            name="courseGrades"
+            type="com.abusada.teachme.data.models.CourseGrade" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:coroutineClick="@{ () -> viewModel.onCourseClicked(course) }">
+        app:coroutineClick="@{ () -> viewModel.onCourseClicked(courseGrades) }">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            android:text="@{ course.name }"
+            android:text="@{ courseGrades.course.name }"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
