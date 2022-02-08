@@ -18,7 +18,7 @@ interface CourseDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertCourses(courses: List<Course>)
 
-    @Query("SELECT * FROM " + MyDatabase.TABLES.COURSE_TABLE)
+    @Query("SELECT * FROM course_table")
     fun getCourseGrades(): Flow<List<CourseGrade>>
 
 }

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.abusada.teachme.R
 import com.abusada.teachme.databinding.FragmentFindTeacherGradesBinding
 import com.abusada.teachme.presentation.BaseFragment
@@ -34,7 +35,9 @@ class FindTeacherGradesFragment : BaseFragment(R.layout.fragment_find_teacher_gr
         viewModel.findTeacherActions.observe(viewLifecycleOwner, {
             when (it) {
                 is FindTeacherViewModel.FindTeacherActions.GradeClicked -> {
-                    Toast.makeText(context, it.grade.name, Toast.LENGTH_SHORT).show()
+                    viewModel.selectedGradeId = it.grade.id!!
+                    findNavController().navigate(R.id.action_findTeacherGradesFragment_to_findTeacherTeachersFragment)
+                    viewModel.getCourseGradeTeachers()
                 }
             }
         })

@@ -6,7 +6,7 @@ import com.abusada.teachme.data.database.dao.*
 import com.abusada.teachme.data.models.*
 
 @Database(
-    entities = [UserInfo::class, Course::class, FavoriteTeacher::class, Grade::class],
+    entities = [UserInfo::class, Course::class, FavoriteTeacher::class, Grade::class, Teacher::class],
     version = 1,
     exportSchema = false
 )
@@ -18,6 +18,7 @@ abstract class MyDatabase : RoomDatabase() {
     abstract fun courseGradeDao(): CourseGradeDao
     abstract fun favoriteTeacherDao(): FavoriteTeacherDao
     abstract fun gradeDao(): GradeDao
+    abstract fun teacherDao(): TeacherDao
 
     object TABLES {
 

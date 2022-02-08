@@ -38,8 +38,8 @@ class RepositoryModule {
     fun provideFindTeacherRepository(
         findTeacherApiEndPoint: FindTeacherApiEndPoint,
         courseDao: CourseDao,
-        gradeDao: GradeDao
-    ): FindTeacherRepository =
-        FindTeacherRepositoryImpl(findTeacherApiEndPoint, courseDao, gradeDao)
+        gradeDao: GradeDao,
+        teacherDao: TeacherDao
+    ): FindTeacherRepository = FindTeacherRepositoryImpl(findTeacherApiEndPoint, courseDao, gradeDao, teacherDao)
 
 }

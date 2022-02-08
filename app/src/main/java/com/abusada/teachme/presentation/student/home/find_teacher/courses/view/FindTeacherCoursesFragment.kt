@@ -39,6 +39,7 @@ class FindTeacherCoursesFragment : BaseFragment(R.layout.fragment_find_teacher_c
             when (it) {
                 is FindTeacherViewModel.FindTeacherActions.CourseClicked -> {
                     viewModel.selectedCourse = it.courseGrade
+                    viewModel.selectedCourseId = it.courseGrade.id!!
                     findNavController().navigate(R.id.action_findTeacherCoursesFragment_to_findTeacherGradesFragment)
                 }
             }

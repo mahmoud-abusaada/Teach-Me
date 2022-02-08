@@ -6,8 +6,8 @@ import androidx.room.Relation
 import com.abusada.teachme.data.database.MyDatabase
 
 @Entity(tableName = MyDatabase.TABLES.COURSE_TABLE)
-data class Course(
+open class Course(
     @PrimaryKey
-    val id: Int? = 0,
-    val name: String? = ""
+    var id: Int? = 0,
+    var name: String? = ""
 )

@@ -5,5 +5,13 @@
     <fragment
         android:id="@+id/studentHomeFragment2"
         android:name="com.abusada.teachme.presentation.student.home.StudentHomeFragment"
-        android:label="StudentHomeFragment" />
+        android:label="StudentHomeFragment" >
+        <action
+            android:id="@+id/action_studentHomeFragment2_to_teacherInfoActivity"
+            app:destination="@id/teacherInfoActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/teacherInfoActivity"
+        android:name="com.abusada.teachme.presentation.student.teacher_info.TeacherInfoActivity"
+        android:label="TeacherInfoActivity" />
 </navigation>
