@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface CourseGradeDao {
 
-    @Transaction @Query("SELECT * FROM " + MyDatabase.TABLES.COURSE_TABLE)
+    @Transaction @Query("SELECT * FROM course_table")
     fun getCourseGrades(): Flow<List<CourseGrade>>
 
 }

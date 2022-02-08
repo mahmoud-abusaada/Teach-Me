@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/teacher_info_nav_graph"
+    app:startDestination="@id/teacherInfoFragment">
+
+    <fragment
+        android:id="@+id/teacherInfoFragment"
+        android:name="com.abusada.teachme.presentation.student.teacher_info.view.TeacherInfoFragment"
+        android:label="TeacherInfoFragment" />
+</navigation>

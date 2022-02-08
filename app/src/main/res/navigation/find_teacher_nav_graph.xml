@@ -22,6 +22,6 @@
     </fragment>
     <fragment
         android:id="@+id/findTeacherTeachersFragment"
-        android:name="com.abusada.teachme.presentation.student.home.find_teacher.teachers.FindTeacherTeachersFragment"
+        android:name="com.abusada.teachme.presentation.student.home.find_teacher.teachers.view.FindTeacherTeachersFragment"
         android:label="FindTeacherTeachersFragment" />
 </navigation>

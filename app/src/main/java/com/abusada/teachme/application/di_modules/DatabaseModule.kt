@@ -47,4 +47,8 @@ class DatabaseModule {
     @Provides
     fun provideGradeDao(myDatabase: MyDatabase): GradeDao = myDatabase.gradeDao()
 
+    @Singleton
+    @Provides
+    fun provideTeacherDao(myDatabase: MyDatabase): TeacherDao = myDatabase.teacherDao()
+
 }

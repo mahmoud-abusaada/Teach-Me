@@ -14,7 +14,7 @@ interface UserInfoDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertUserInfo(userInfo: UserInfo)
 
-    @Query("SELECT * FROM " + MyDatabase.TABLES.USER_INFO_TABLE)
+    @Query("SELECT * FROM user_table")
     fun getUserInfo(): LiveData<UserInfo>
 
 }

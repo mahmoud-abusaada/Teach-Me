@@ -15,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TeachMe">
-        <activity android:name=".presentation.student.StudentActivity"></activity>
+        <activity
+            android:name=".presentation.student.teacher_info.TeacherInfoActivity"
+            android:exported="false" />
+        <activity android:name=".presentation.student.StudentActivity" />
         <activity android:name=".presentation.start.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

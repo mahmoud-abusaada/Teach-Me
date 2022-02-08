@@ -20,27 +20,27 @@ class MyDataStore(val context: Context) {
     suspend fun saveUserInfo(userInfo: UserInfo) {
         context.dataStore.edit { preferences ->
 
-            preferences[USER_ID] = userInfo.userId
-            preferences[FIRST_NAME] = userInfo.firstName
-            preferences[LAST_NAME] = userInfo.lastName
-            preferences[USERNAME] = userInfo.username
-            preferences[EMAIL] = userInfo.email
-            preferences[PHONE_NUMBER] = userInfo.phoneNumber
-            preferences[COUNTRY_ID] = userInfo.countryId
-            preferences[LOCATION_LAT] = userInfo.location_lat
-            preferences[LOCATION_LNG] = userInfo.location_lng
-            preferences[ACCESS_TOKEN] = userInfo.token
-            preferences[ACCOUNT_TYPE] = userInfo.accountType
+            preferences[USER_ID] = userInfo.userId!!
+            preferences[FIRST_NAME] = userInfo.firstName!!
+            preferences[LAST_NAME] = userInfo.lastName!!
+            preferences[USERNAME] = userInfo.username!!
+            preferences[EMAIL] = userInfo.email!!
+            preferences[PHONE_NUMBER] = userInfo.phoneNumber!!
+            preferences[COUNTRY_ID] = userInfo.countryId!!
+            preferences[LOCATION_LAT] = userInfo.location_lat!!
+            preferences[LOCATION_LNG] = userInfo.location_lng!!
+            preferences[ACCESS_TOKEN] = userInfo.token!!
+            preferences[ACCOUNT_TYPE] = userInfo.accountType!!
 
             when (userInfo) {
                 is Student -> {
-                    preferences[AGE] = userInfo.age
+                    preferences[AGE] = userInfo.age!!
                 }
                 is Teacher -> {
-                    preferences[TITLE] = userInfo.title
-                    preferences[INFORMATION] = userInfo.information
-                    preferences[HOUR_PRICE] = userInfo.hourPrice
-                    preferences[RATE] = userInfo.rate
+                    preferences[TITLE] = userInfo.title!!
+                    preferences[INFORMATION] = userInfo.information!!
+                    preferences[HOUR_PRICE] = userInfo.hourPrice!!
+                    preferences[RATE] = userInfo.rate!!
                 }
             }
         }
@@ -99,7 +99,7 @@ class MyDataStore(val context: Context) {
         }
 
     companion object {
-        private val USER_ID = intPreferencesKey("user_id")
+        private val USER_ID = longPreferencesKey("user_id")
         private val FIRST_NAME = stringPreferencesKey("first_name")
         private val LAST_NAME = stringPreferencesKey("last_name")
         private val USERNAME = stringPreferencesKey("username")
